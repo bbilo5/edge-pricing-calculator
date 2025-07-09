@@ -23,11 +23,9 @@ export default function App() {
         <p className="text-md text-white mt-2">Simulate your campaign results instantly.</p>
       </div>
 
-      {/* Bottom Section - Split Background with Inputs and Outputs */}
+      {/* Bottom Section - Inputs and Outputs */}
       <div className="relative -mt-20 z-10 pb-20">
         <div className="max-w-5xl mx-auto rounded-xl shadow-md relative overflow-hidden">
-          {/* Red background on top half */}
-          <div className="absolute inset-0 top-0 h-1/2 bg-[#e50C00] z-0" />
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-20">
             {/* Input Box */}
             <div className="bg-white shadow-md rounded-xl p-6">
