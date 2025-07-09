@@ -1,5 +1,6 @@
 import { useState } from "react";
-import logo from "../public/Edge Logo_1 line_White.png";
+
+const logo = "/Edge Logo_1 line_White.png"; // <-- Public folder reference
 
 export default function App() {
   const [budget, setBudget] = useState(0);
@@ -22,7 +23,7 @@ export default function App() {
       </div>
 
       {/* Right Side - Calculator */}
-      <div className="p-6 md:p-10 space-y-6">
+      <div className="p-6 md:p-10 space-y-6 bg-white">
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">📊 Input</h2>
 
