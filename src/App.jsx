@@ -17,14 +17,14 @@ export default function App() {
   return (
     <div className="min-h-screen font-[baikal] bg-white">
       {/* Top Section - Red with Logo and Title */}
-      <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center py-32 px-4">
-        <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-6" />
+      <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center pt-32 pb-40 px-4">
+        <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-10" />
         <h1 className="text-4xl font-medium text-center">Positive Proforma Estimates</h1>
         <p className="text-md text-white mt-2">Simulate your campaign results instantly.</p>
       </div>
 
       {/* Bottom Section - Calculator Layout */}
-      <div className="relative bg-white -mt-20 z-10">
+      <div className="relative bg-[#e50C00] -mt-32 z-10 pb-20">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-6 md:py-16">
           {/* Input Box */}
           <div className="bg-white shadow-md rounded-xl p-6">
@@ -82,7 +82,7 @@ export default function App() {
 
           {/* Output Box */}
           <div className="bg-white shadow-md rounded-xl p-6">
-            <h2 className="text-lg font-medium mb-6">Estimated Results</h2>
+            <h2 className="text-xl font-medium text-center mb-6">Estimated Results</h2>
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <p className="text-sm text-[#e50C00] uppercase font-medium">Impressions</p>
