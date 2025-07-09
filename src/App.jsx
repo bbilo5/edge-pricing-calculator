@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const logo = "/Edge Logo_1 line_White.png"; // <-- Public folder reference
+const logo = "/Edge Logo_1 line_White.png"; // Make sure it's in /public folder
 
 export default function App() {
   const [budget, setBudget] = useState(0);
@@ -15,20 +15,21 @@ export default function App() {
   const roas = (sales * AOV) / budget || 0;
 
   return (
-    <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 font-[baikal]">
-      {/* Left Side - Red Background with Logo and Title */}
-      <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center p-10">
+    <div className="min-h-screen flex flex-col md:flex-row font-[baikal]">
+      {/* Left Side - Vertical Red Half */}
+      <div className="w-full md:w-1/2 bg-[#e50C00] text-white flex flex-col justify-center items-center p-10">
         <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-6" />
         <h1 className="text-4xl font-bold text-center">Positive Proforma Estimates</h1>
       </div>
 
       {/* Right Side - Calculator */}
-      <div className="p-6 md:p-10 space-y-6 bg-white">
+      <div className="w-full md:w-1/2 p-6 md:p-10 bg-white grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Input Column */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">📊 Input</h2>
 
           <div>
-            <label className="block text-sm font-medium">Budget</label>
+            <label className="block text-sm font-medium">Budget (6 Weeks)</label>
             <input
               type="range"
               min="20000"
@@ -78,6 +79,7 @@ export default function App() {
           </div>
         </div>
 
+        {/* Output Column */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">📈 Output</h2>
           <div className="grid gap-6">
