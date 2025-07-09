@@ -15,20 +15,21 @@ export default function App() {
   const roas = (sales * AOV) / budget || 0;
 
   return (
-    <div className="min-h-screen flex flex-col font-[baikal]">
-      {/* Top Section - Red */}
-      <div className="w-full bg-[#e50C00] text-white flex flex-col justify-center items-center p-10">
+    <div className="min-h-screen font-[baikal] bg-white">
+      {/* Top Section - Red with Logo and Title */}
+      <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center py-16 px-4">
         <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-6" />
         <h1 className="text-4xl font-bold text-center">Positive Proforma Estimates</h1>
       </div>
 
-      {/* Bottom Section - Calculator */}
-      <div className="w-full p-6 md:p-10 bg-white grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* Input Column */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">📊 Input</h2>
+      {/* Bottom Section - Calculator Layout */}
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-6 md:py-16">
+        {/* Input Box */}
+        <div className="bg-white shadow-md rounded-xl p-6">
+          <h2 className="text-lg font-semibold mb-2">Test your budget</h2>
+          <p className="text-sm text-gray-600 mb-4">Simulate your campaign results by entering your future campaign budgets.</p>
 
-          <div>
+          <div className="mb-4">
             <label className="block text-sm font-medium">Budget (6 Weeks)</label>
             <input
               type="range"
@@ -42,7 +43,7 @@ export default function App() {
             <div className="text-sm text-gray-700 mt-1">${budget.toLocaleString()}</div>
           </div>
 
-          <div>
+          <div className="mb-4">
             <label className="block text-sm font-medium">Blended CPM</label>
             <input
               type="range"
@@ -80,9 +81,9 @@ export default function App() {
           </div>
         </div>
 
-        {/* Output Column */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">📈 Output</h2>
+        {/* Output Box */}
+        <div className="bg-white shadow-md rounded-xl p-6">
+          <h2 className="text-lg font-semibold mb-6">Estimated Results</h2>
           <div className="grid grid-cols-2 gap-6">
             <div>
               <p className="text-sm text-[#e50C00] uppercase font-bold">Impressions</p>
