@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const logo = "/Edge Logo_1 line_White.png"; // Make sure it's in /public folder
+const logo = "/Edge Logo_1 line_White.png"; // Ensure the logo is placed in the public folder
 
 export default function App() {
   const [budget, setBudget] = useState(0);
@@ -100,6 +100,21 @@ export default function App() {
                 <p className="text-3xl font-bold text-black">{roas.toFixed(2)}</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Call-to-action Box */}
+        <div className="max-w-3xl mx-auto mt-8 px-6">
+          <div className="bg-gray-100 rounded-xl shadow-md p-6 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-lg font-semibold text-black mb-4 md:mb-0">Want to see how this plays out for your brand?</p>
+            <a
+              href="https://www.havasedge.com/contact/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#e50C00] hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition"
+            >
+              Book a demo
+            </a>
           </div>
         </div>
       </div>
