@@ -19,7 +19,8 @@ export default function App() {
       {/* Top Section - Red with Logo and Title */}
       <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center py-32 px-4">
         <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-6" />
-        <h1 className="text-4xl font-bold text-center">Positive Proforma Estimates</h1>
+        <h1 className="text-4xl font-medium text-center">Positive Proforma Estimates</h1>
+        <p className="text-md text-white mt-2">Simulate your campaign results instantly.</p>
       </div>
 
       {/* Bottom Section - Calculator Layout */}
@@ -81,23 +82,23 @@ export default function App() {
 
           {/* Output Box */}
           <div className="bg-white shadow-md rounded-xl p-6">
-            <h2 className="text-lg font-semibold mb-6">Estimated Results</h2>
+            <h2 className="text-lg font-medium mb-6">Estimated Results</h2>
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <p className="text-sm text-[#e50C00] uppercase font-bold">Impressions</p>
-                <p className="text-3xl font-bold text-black">{Math.round(impressions).toLocaleString()}</p>
+                <p className="text-sm text-[#e50C00] uppercase font-medium">Impressions</p>
+                <p className="text-3xl font-medium text-black">{Math.round(impressions).toLocaleString()}</p>
               </div>
               <div>
-                <p className="text-sm text-[#e50C00] uppercase font-bold">Estimated Visits</p>
-                <p className="text-3xl font-bold text-black">{Math.round(visits).toLocaleString()}</p>
+                <p className="text-sm text-[#e50C00] uppercase font-medium">Estimated Visits</p>
+                <p className="text-3xl font-medium text-black">{Math.round(visits).toLocaleString()}</p>
               </div>
               <div>
-                <p className="text-sm text-[#e50C00] uppercase font-bold">Estimated Sales</p>
-                <p className="text-3xl font-bold text-black">{Math.round(sales).toLocaleString()}</p>
+                <p className="text-sm text-[#e50C00] uppercase font-medium">Estimated Sales</p>
+                <p className="text-3xl font-medium text-black">{Math.round(sales).toLocaleString()}</p>
               </div>
               <div>
-                <p className="text-sm text-[#e50C00] uppercase font-bold">ROAS</p>
-                <p className="text-3xl font-bold text-black">{roas.toFixed(2)}</p>
+                <p className="text-sm text-[#e50C00] uppercase font-medium">ROAS</p>
+                <p className="text-3xl font-medium text-black">{roas.toFixed(2)}</p>
               </div>
             </div>
           </div>
@@ -106,12 +107,12 @@ export default function App() {
         {/* Call-to-action Box */}
         <div className="max-w-3xl mx-auto mt-8 px-6">
           <div className="bg-gray-100 rounded-xl shadow-md p-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-lg font-semibold text-black mb-4 md:mb-0">Want to see how this plays out for your brand?</p>
+            <p className="text-md text-black mb-4 md:mb-0">Want to see how this plays out for your brand?</p>
             <a
               href="https://www.havasedge.com/contact/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#e50C00] hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition"
+              className="bg-[#e50C00] hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg transition"
             >
               Book a demo
             </a>
