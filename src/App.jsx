@@ -15,15 +15,15 @@ export default function App() {
   const roas = (sales * AOV) / budget || 0;
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row font-[baikal]">
-      {/* Left Side - Vertical Red Half */}
-      <div className="w-full md:w-1/2 bg-[#e50C00] text-white flex flex-col justify-center items-center p-10">
+    <div className="min-h-screen flex flex-col font-[baikal]">
+      {/* Top Section - Red */}
+      <div className="w-full bg-[#e50C00] text-white flex flex-col justify-center items-center p-10">
         <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-6" />
         <h1 className="text-4xl font-bold text-center">Positive Proforma Estimates</h1>
       </div>
 
-      {/* Right Side - Calculator */}
-      <div className="w-full md:w-1/2 p-6 md:p-10 bg-white grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* Bottom Section - Calculator */}
+      <div className="w-full p-6 md:p-10 bg-white grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Input Column */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">📊 Input</h2>
@@ -56,33 +56,34 @@ export default function App() {
             <div className="text-sm text-gray-700 mt-1">${cpm.toFixed(2)}</div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium">Impressions to Visits CR</label>
-            <input
-              type="number"
-              className="w-full mt-1 p-2 border rounded"
-              value={cr1}
-              onChange={(e) => setCr1(Number(e.target.value))}
-            />
-            <div className="text-sm text-gray-700 mt-1">{cr1.toFixed(2)}%</div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium">Visits to Orders CR</label>
-            <input
-              type="number"
-              className="w-full mt-1 p-2 border rounded"
-              value={cr2}
-              onChange={(e) => setCr2(Number(e.target.value))}
-            />
-            <div className="text-sm text-gray-700 mt-1">{cr2.toFixed(2)}%</div>
+          <div className="flex space-x-4">
+            <div className="w-1/2">
+              <label className="block text-sm font-medium">Impressions to Visits CR (%)</label>
+              <input
+                type="number"
+                className="w-full mt-1 p-2 border rounded"
+                value={cr1}
+                onChange={(e) => setCr1(Number(e.target.value))}
+              />
+              <div className="text-sm text-gray-700 mt-1">{cr1.toFixed(2)}%</div>
+            </div>
+            <div className="w-1/2">
+              <label className="block text-sm font-medium">Visits to Orders CR (%)</label>
+              <input
+                type="number"
+                className="w-full mt-1 p-2 border rounded"
+                value={cr2}
+                onChange={(e) => setCr2(Number(e.target.value))}
+              />
+              <div className="text-sm text-gray-700 mt-1">{cr2.toFixed(2)}%</div>
+            </div>
           </div>
         </div>
 
         {/* Output Column */}
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">📈 Output</h2>
-          <div className="grid gap-6">
+          <div className="grid grid-cols-2 gap-6">
             <div>
               <p className="text-sm text-[#e50C00] uppercase font-bold">Impressions</p>
               <p className="text-3xl font-bold text-black">{Math.round(impressions).toLocaleString()}</p>
