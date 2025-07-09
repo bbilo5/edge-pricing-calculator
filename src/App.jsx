@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../public/Edge Logo_1 line_White.png";
 
 export default function App() {
   const [budget, setBudget] = useState(0);
@@ -13,9 +14,15 @@ export default function App() {
   const roas = (sales * AOV) / budget || 0;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-8">Positive Proforma Estimates</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 font-[baikal]">
+      {/* Left Side - Red Background with Logo and Title */}
+      <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center p-10">
+        <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-6" />
+        <h1 className="text-4xl font-bold text-center">Positive Proforma Estimates</h1>
+      </div>
+
+      {/* Right Side - Calculator */}
+      <div className="p-6 md:p-10 space-y-6">
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">📊 Input</h2>
 
@@ -70,13 +77,25 @@ export default function App() {
           </div>
         </div>
 
-        <div className="bg-gray-100 p-6 rounded-xl space-y-4">
+        <div className="space-y-4">
           <h2 className="text-2xl font-semibold">📈 Output</h2>
-          <div className="text-lg">
-            <p><strong>Impressions:</strong> {Math.round(impressions).toLocaleString()}</p>
-            <p><strong>Estimated Visits:</strong> {Math.round(visits).toLocaleString()}</p>
-            <p><strong>Estimated Sales:</strong> {Math.round(sales).toLocaleString()}</p>
-            <p><strong>ROAS:</strong> {roas.toFixed(2)}</p>
+          <div className="grid gap-6">
+            <div>
+              <p className="text-sm text-[#e50C00] uppercase font-bold">Impressions</p>
+              <p className="text-3xl font-bold text-black">{Math.round(impressions).toLocaleString()}</p>
+            </div>
+            <div>
+              <p className="text-sm text-[#e50C00] uppercase font-bold">Estimated Visits</p>
+              <p className="text-3xl font-bold text-black">{Math.round(visits).toLocaleString()}</p>
+            </div>
+            <div>
+              <p className="text-sm text-[#e50C00] uppercase font-bold">Estimated Sales</p>
+              <p className="text-3xl font-bold text-black">{Math.round(sales).toLocaleString()}</p>
+            </div>
+            <div>
+              <p className="text-sm text-[#e50C00] uppercase font-bold">ROAS</p>
+              <p className="text-3xl font-bold text-black">{roas.toFixed(2)}</p>
+            </div>
           </div>
         </div>
       </div>
