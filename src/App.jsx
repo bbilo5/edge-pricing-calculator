@@ -17,15 +17,15 @@ export default function App() {
   return (
     <div className="min-h-screen font-[baikal] bg-white">
       {/* Top Section - Red with Logo and Title */}
-      <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center pt-32 pb-40 px-4">
-        <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-10" />
+      <div className="bg-[#e50C00] text-white flex flex-col justify-center items-center pt-32 pb-20 px-4">
+        <img src={logo} alt="Havas Edge Logo" className="max-w-xs mb-16" />
         <h1 className="text-4xl font-medium text-center">Positive Proforma Estimates</h1>
         <p className="text-md text-white mt-2">Simulate your campaign results instantly.</p>
       </div>
 
-      {/* Bottom Section - Calculator Layout */}
-      <div className="relative bg-[#e50C00] -mt-32 z-10 pb-20">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-6 md:py-16">
+      {/* Bottom Section - Split Box Layout with Red Background */}
+      <div className="relative -mt-20 z-10 pb-20">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 py-20 bg-gradient-to-b from-[#e50C00] to-white rounded-xl shadow-md">
           {/* Input Box */}
           <div className="bg-white shadow-md rounded-xl p-6">
             <div className="mb-4">
@@ -82,23 +82,23 @@ export default function App() {
 
           {/* Output Box */}
           <div className="bg-white shadow-md rounded-xl p-6">
-            <h2 className="text-xl font-medium text-center mb-6">Estimated Results</h2>
+            <h2 className="text-xl font-bold text-center mb-6">Estimated Results</h2>
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <p className="text-sm text-[#e50C00] uppercase font-medium">Impressions</p>
-                <p className="text-3xl font-medium text-black">{Math.round(impressions).toLocaleString()}</p>
+                <p className="text-3xl font-normal text-black">{Math.round(impressions).toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-sm text-[#e50C00] uppercase font-medium">Estimated Visits</p>
-                <p className="text-3xl font-medium text-black">{Math.round(visits).toLocaleString()}</p>
+                <p className="text-3xl font-normal text-black">{Math.round(visits).toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-sm text-[#e50C00] uppercase font-medium">Estimated Sales</p>
-                <p className="text-3xl font-medium text-black">{Math.round(sales).toLocaleString()}</p>
+                <p className="text-3xl font-normal text-black">{Math.round(sales).toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-sm text-[#e50C00] uppercase font-medium">ROAS</p>
-                <p className="text-3xl font-medium text-black">{roas.toFixed(2)}</p>
+                <p className="text-3xl font-normal text-black">{roas.toFixed(2)}</p>
               </div>
             </div>
           </div>
