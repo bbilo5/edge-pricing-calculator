@@ -13,68 +13,71 @@ export default function App() {
   const roas = (sales * AOV) / budget || 0;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div className="space-y-4">
-        <h2 className="text-2xl font-semibold">📊 Input</h2>
+    <div className="p-6 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold text-center mb-8">Positive Proforma Estimates</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold">📊 Input</h2>
 
-        <div>
-          <label className="block text-sm font-medium">Budget</label>
-          <input
-            type="range"
-            min="20000"
-            max="100000000"
-            step="5000"
-            className="w-full mt-1"
-            value={budget}
-            onChange={(e) => setBudget(Number(e.target.value))}
-          />
-          <div className="text-sm text-gray-700 mt-1">${budget.toLocaleString()}</div>
+          <div>
+            <label className="block text-sm font-medium">Budget</label>
+            <input
+              type="range"
+              min="20000"
+              max="1000000"
+              step="5000"
+              className="w-full mt-1 accent-[#e50C00]"
+              value={budget}
+              onChange={(e) => setBudget(Number(e.target.value))}
+            />
+            <div className="text-sm text-gray-700 mt-1">${budget.toLocaleString()}</div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium">Blended CPM</label>
+            <input
+              type="range"
+              min="2"
+              max="50"
+              step="0.5"
+              className="w-full mt-1 accent-[#e50C00]"
+              value={cpm}
+              onChange={(e) => setCpm(Number(e.target.value))}
+            />
+            <div className="text-sm text-gray-700 mt-1">${cpm.toFixed(2)}</div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium">Impressions to Visits CR</label>
+            <input
+              type="number"
+              className="w-full mt-1 p-2 border rounded"
+              value={cr1}
+              onChange={(e) => setCr1(Number(e.target.value))}
+            />
+            <div className="text-sm text-gray-700 mt-1">{cr1.toFixed(2)}%</div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium">Visits to Orders CR</label>
+            <input
+              type="number"
+              className="w-full mt-1 p-2 border rounded"
+              value={cr2}
+              onChange={(e) => setCr2(Number(e.target.value))}
+            />
+            <div className="text-sm text-gray-700 mt-1">{cr2.toFixed(2)}%</div>
+          </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium">Blended CPM</label>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            step="0.5"
-            className="w-full mt-1"
-            value={cpm}
-            onChange={(e) => setCpm(Number(e.target.value))}
-          />
-          <div className="text-sm text-gray-700 mt-1">${cpm.toFixed(2)}</div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium">Impressions to Visits CR</label>
-          <input
-            type="number"
-            className="w-full mt-1 p-2 border rounded"
-            value={cr1}
-            onChange={(e) => setCr1(Number(e.target.value))}
-          />
-          <div className="text-sm text-gray-700 mt-1">{cr1.toFixed(2)}%</div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium">Visits to Orders CR</label>
-          <input
-            type="number"
-            className="w-full mt-1 p-2 border rounded"
-            value={cr2}
-            onChange={(e) => setCr2(Number(e.target.value))}
-          />
-          <div className="text-sm text-gray-700 mt-1">{cr2.toFixed(2)}%</div>
-        </div>
-      </div>
-
-      <div className="bg-gray-100 p-6 rounded-xl space-y-4">
-        <h2 className="text-2xl font-semibold">📈 Output</h2>
-        <div className="text-lg">
-          <p><strong>Impressions:</strong> {Math.round(impressions).toLocaleString()}</p>
-          <p><strong>Estimated Visits:</strong> {Math.round(visits).toLocaleString()}</p>
-          <p><strong>Estimated Sales:</strong> {Math.round(sales).toLocaleString()}</p>
-          <p><strong>ROAS:</strong> {roas.toFixed(2)}</p>
+        <div className="bg-gray-100 p-6 rounded-xl space-y-4">
+          <h2 className="text-2xl font-semibold">📈 Output</h2>
+          <div className="text-lg">
+            <p><strong>Impressions:</strong> {Math.round(impressions).toLocaleString()}</p>
+            <p><strong>Estimated Visits:</strong> {Math.round(visits).toLocaleString()}</p>
+            <p><strong>Estimated Sales:</strong> {Math.round(sales).toLocaleString()}</p>
+            <p><strong>ROAS:</strong> {roas.toFixed(2)}</p>
+          </div>
         </div>
       </div>
     </div>
